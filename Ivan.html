@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motocykle</title>
+    <style>
+        * {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-image: url('motor.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-style: italic;
+            text-align: center;
+            font-size: 150%;
+            padding: 40px 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            position: relative;
+            z-index: 2;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .left-block {
+            width: 75%;
+            height: 600px;
+            background-color: rgba(0, 100, 0, 0.6);
+            padding: 1%;
+            font-size: 120%;
+            overflow-y: auto;
+            box-shadow: 10px 10px 7px DimGray;
+        }
+
+        .left-block dl {
+            margin: 0;
+        }
+
+        .left-block dt, .left-block dd {
+            margin-bottom: 10px;
+        }
+
+        .left-block dt {
+            font-weight: bold;
+        }
+
+        .left-block dd {
+            margin-left: 20px;
+        }
+
+        .left-block dd:hover {
+            background-color: LightGreen;
+        }
+
+        .right-block {
+            width: 15%;
+            height: 300px;
+            background-color: rgba(0, 100, 0, 0.6);
+            margin: 1%;
+            padding: 10px;
+            box-shadow: 10px 10px 7px DimGray;
+        }
+
+        .right-block h2 {
+            text-align: center;
+            font-style: italic;
+        }
+
+        .right-block ol, .left-block dl {
+            margin-top: 10px;
+        }
+
+        .right-block ol li, .left-block dt, .left-block dd {
+            color: white;
+        }
+
+        .right-block li:hover {
+            background-color: LightGreen;
+        }
+
+        footer {
+            background-color: rgba(60, 120, 160, 0.9);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-style: italic;
+        }
+
+        img {
+            display: block;
+            margin-left: 15%;
+            width: 70%;
+        }
+
+        .sub-title {
+            text-align: center;
+            font-size: 200%;
+            font-style: italic;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Motocykle - moja pasja</h1>
+    </header>
+    <div class="sub-title">
+        <h2>Motocykle</h2>
+    </div>
+    <div class="container">
+        <section class="left-block">
+            <p>
+                
+            </p>
+            <h2>Gdzie pojechać?</h2>
+            <dl>
+                <script>
+                    const miejsca = [
+                        {term: "Tatry", description: "Wspaniałe widoki i drogi."},
+                        {term: "Bieszczady", description: "Spokojne i malownicze trasy."},
+                        {term: "Morze", description: "Idealne na letnią podróż."}
+                    ];
+                    const dl = document.querySelector("dl");
+                    miejsca.forEach(miejsce => {
+                        let dt = document.createElement("dt");
+                        dt.textContent = miejsce.term;
+                        let dd = document.createElement("dd");
+                        dd.textContent = miejsce.description;
+                        dl.appendChild(dt);
+                        dl.appendChild(dd);
+                    });
+                </script>
+            </dl>
+        </section>
+        <section class="right-block">
+            <h2>Co kupić?</h2>
+            <ol>
+                <li>Honda CBR125R</li>
+                <li>Yamaha YBR125</li>
+                <li>Honda VFR800i</li>
+                <li>Honda CBR1100XX</li>
+                <li>BMW R1200GS LC</li>
+            </ol>
+        </section>
+        <section class="right-block">
+            <h2>Statystyki</h2>
+            <p>Wpisanych wycieczek: <span id="wycieczki-count">0</span></p>
+            <p>Użytkowników forum: 200</p>
+            <p>Przesłanych zdjęć: 1300</p>
+            <script>
+                document.getElementById("wycieczki-count").textContent = 120;
+            </script>
+        </section>
+    </div>
+    <img src="motor.png" alt="motocykl">
+</body>
+</html>
